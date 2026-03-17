@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="AutomationSuite">
+
+<!--     <listeners> -->
+<!--         <listener class-name="listeners.TestListener"/> -->
+<!--     </listeners> -->
+
+    <test name="API Tests">
+        <classes>
+            <class name="practiceRestfulBooker.GetBookingsAPI"/>
+        </classes>
+    </test>
+
+</suite>

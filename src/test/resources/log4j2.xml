@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="info">
+	<!-- status=info is log4j internal logs for error in log file if off no 
+		logs will come regarding log file -->
+
+	<Appenders>
+		<Console name="LoggingToConsole" target="SYSTEM_OUT">
+
+			<PatternLayout>
+				<Pattern>
+					%d - %c - [%M] - (%p) - %m - %n
+				</Pattern>
+			</PatternLayout>
+
+		</Console>
+
+		<!-- <File name="LoggingToFile" fileName="logs/app-%d{yyyy-MM-dd-HH-mm}.log" 
+			append="false"> -->
+		<File name="LoggingToFile" fileName="logs/app.log" append="false">
+
+			<!-- name = "LoggingToFile" we give name -->
+			<!-- fileName="logs/app-%d{yyyy-MM-dd-HH-mm}.log" we give location with 
+				time to add new file and keep old -->
+			<!-- append="false" overwrites the file else old logs will also be present 
+				used when above name is same -->
+
+
+			<PatternLayout>
+				<Pattern>
+					%d{yyyy-MM-dd HH:mm:ss} [%X{testname}] [%t] %-5level %c -
+					%m%n
+				</Pattern>
+			</PatternLayout>
+		</File>
+
+	</Appenders>
+
+	<Loggers>
+
+		<Root level="debug">
+			<!-- level="debug" - shows level from which logs should be printed -->
+			<AppenderRef ref="LoggingToConsole" />
+			<AppenderRef ref="LoggingToFile" />
+		</Root>
+	</Loggers>
+
+</Configuration>
